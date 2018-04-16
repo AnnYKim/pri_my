@@ -195,10 +195,34 @@
     }
     #signUpBtn {
         @include btn-normal;
+        @include pc-md {
+            display: none;
+        }
     }
 }
 
 #signup {
+    text-align: center;
+    
+    #signUpForm {
+        background-color: #f9f9f9;
+        margin: 0px auto 20px;
+        padding: 5vh 5vw;
+        box-sizing: border-box;
+    }
+    
+    .genderRow label {
+        display: inline-block;
+        border: 1px solid #ccc;
+        text-align: center;
+        padding: 4px;
+        cursor: pointer;
+        background-color: #fff;
+    }
+    .genderRow input {
+        width: 0;
+        visibility: hidden;
+    }
     #goToLoginBtn {
         @include btn-normal;
     }

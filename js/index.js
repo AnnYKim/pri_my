@@ -11,6 +11,13 @@ $(function(){
     var $introSite = $("#introSite");
     var $goToLoginBtn = $("#goToLoginBtn");
     
+    var $genderBtn = $(".genderRow label");
+    
+    function genderBgInit(){
+        $genderBtn.css("background","#fff");
+        $genderBtn.css("color","#000");
+    }
+    
     
     //[가입하기] 버튼 클릭 이벤트
     $signUpBtn.on("click",function(){
@@ -37,6 +44,33 @@ $(function(){
         
         //내가 만드는... 문구 보이기
         $introSite.slideDown();
+    });
+    
+    
+    //[성별] 버튼 클릭 이벤트
+    $genderBtn.on("click",function(){
+        
+        //배경색과 텍스의 색 초기화 함수 호출
+        genderBgInit();
+        $(this).css("background","#3cb371");
+        $(this).css("color","#fff");
+    });
+    
+    
+    //데스크탑 버전 대응
+    var toGoToShort = false;
+    $(window).on("load resize",function(){
+        if(window.innerWidth >= 1200) {
+            $loginForm.slideDown();
+            $signup.slideDown();
+            $introSite.slideDown();
+            toGoToShort = true;
+            
+        }else{
+            if(toGoToShort === true){
+                $signup.slideUp();
+            }
+        }
     });
     
     
