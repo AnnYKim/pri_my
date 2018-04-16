@@ -1,0 +1,178 @@
+@charset "utf-8";
+
+
+/*  
+*   HEADER STYLE
+*/
+
+
+
+//로그인 후 요소 안 보이게 처리
+#viewType, #myName {_display: none;}
+#loginForm {display: none;}
+
+
+
+//모바일, PC공용
+#header {
+    float: left;
+    clear: both;
+    width: 100%;
+    background-color: mediumseagreen;
+}
+
+#loginForm form {
+    float: left;
+    width: 100%;
+}
+
+#viewType {
+    clear: both;
+    width: 130px;
+    height: 25px;
+    margin: 0 auto;
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+}
+
+#meLink {
+    float: left;
+    width: 50%;
+    padding: 8px 0 0 0;
+    height: 17px;
+    line-height: 17px;
+    color: #aaa;
+    text-align: center;
+    border-right: 1px solid #ccc;
+}
+
+#allLink {
+    float: left;
+    width: 49%;
+    padding: 8px 0 0 0;
+    height: 17px;
+    line-height: 17px;
+    color: #aaa;
+    text-align: center;
+}
+
+
+
+//모바일용
+@include pc-sm {
+    
+    #myService { //서비스 안내 문구
+        float: left;
+        color: #fff;
+        width: 100%;
+        font-size: 2rem;
+        text-align: center;
+        margin-bottom: 1rem;
+    }
+    
+    #loginForm {
+        clear: both;
+        
+        #loginEmailArea, #loginPwArea {
+            float: left;
+            clear: both;
+            width: 100%;
+            
+            & > label {
+                float: left;
+                width: 25%;
+                padding-left: 1rem;
+                font-size: 1.5rem;
+                color: #fff;
+            }
+            
+        
+            .loginInputBox {
+                width: 59%;
+                float: left;
+                border: 1px solid #ccc;
+                background-color: #fff;
+            }
+            
+            
+            input {
+                float: left;
+                width: 100%;
+                padding-left: 0.5rem;
+                font-size: 1.5rem;
+                border: none;
+                background-color: #fff;
+            }
+            
+        }
+        
+        
+        #loginPwArea {
+            margin-top: 0.4rem;
+        }
+        
+        .loginSubmitBox {
+            float: left;
+            clear: both;
+            margin: 0.5rem 0 1rem 2rem;
+            padding: 0.3rem;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            
+            #loginSubmit {
+                float: left;
+                clear: both;
+                width: 100%;
+                color: #000;
+                font-size: 1rem;
+                background-color: #none;
+                border: none;
+            }
+        }
+        
+        
+    }//end of #loginForm
+    
+    
+    #myName {
+        float: left;
+        width: 100%;
+        padding: 0.3rem 0 0.3rem 0;
+        background-color: #fff;
+        border-bottom: 1px solid #ccc;
+        
+        p {
+            float: left;
+            margin-left: 2%;
+            font-size: 1rem;
+        }
+        
+        #logoutBox {
+            float: right;
+            margin-top: 1px;
+            margin-right: 5%;
+            border: 1px solid #ccc;
+            
+            #logoutBtn {
+                margin-top: 1px;
+                padding: 0.1rem 0.3rem;
+                font-size: 0.5rem;
+                cursor: pointer;
+            }
+        }
+    }
+    
+    
+}
+
+
+//데스크탑용
+@include pc-md {
+    #myService {
+        float: left;
+        color: #fff;
+        text-align: left;
+        font-size: 2rem;
+        margin: 10px;
+    }
+}
