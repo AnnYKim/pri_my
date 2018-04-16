@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="theme-color" content="#111">
+    <meta name="msapplication-navbutton-color" content="#111">
+    <meta name="apple-mobile-web-app-status-bar-style" content="#111">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, shrink-to-fit=no, user-scalable=no" />
+    
+    <title>My Web Service</title>
+    
+</head>
+<body>
+<div class="wrap">
+    
+<!-- 로그인 후 -->
+<div id="viewType">
+    <a href="/myservice/me.html" id="meLink">me</a>
+    <a href="/myservice/all.html" id="allLink">all</a>
+</div>    
+   
+<header>
+    <div id="myService">My First Web Service</div>
+    
+    <!-- 로그인 후 -->
+    <div id="myName">
+        <p>안녕하세요, 김나영 님</p>
+        <div id="logoutBox">
+            <input type="button" id="logoutBtn" value="로그아웃" />
+        </div>
+    </div>
+    
+    <!-- 로그인 전 -->
+    <div id="loginForm">
+        <form action="./login.php" name="loginForm" method="post">
+            <div id="loginEmailArea">
+                <label for="loginEmail">E-Mail</label>
+                <div class="loginInputBox">
+                    <input type="email" id="loginEmail" name="email" placeholder="이메일" />
+                </div>
+            </div>
+            <div id="loginPwArea">
+                <label for="loginPw">Password</label>
+                <div class="loginInputBox">
+                    <input type="password" name="userPw" id="loginPw" placeholder="비밀번호 8자리 이상 입력" />
+                </div>
+            </div>
+            <div class="loginSubmitBox">
+                <input type="submit" id="loginSubmit" value="로그인" />
+            </div>
+        </form>
+    </div>
+</header>
+   
+<!-- container -->
+<div id="container">
+    <section id="introSite">
+        <div id="siteComment">
+            내가 만드는<br>
+            첫 웹서비스에<br>
+            어서오세요 :)
+        </div>
+        <div id="signUpBtn">
+            <p>가입하기</p>
+        </div>
+    </section>
+    <section id="signup">
+        <div id="signupCenter">
+            <form action="./database/myMember.php" id="signUpForm" method="post">
+                <div class="row">
+                    <div class="inputBox">
+                        <input type="text" name="userName" id="userName" placeholder="이름" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="inputBox">
+                        <input type="email" name="userEmail" id="userEmail" placeholder="이메일" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="inputBox">
+                        <input type="password" name="userPw" id="userPw" placeholder="비밀번호" />
+                    </div>
+                </div>
+                <div class="row">
+                    <label>생일</label>
+                    <div class="selectBox">
+                        <select name="birthYear" id="birthYear">
+                            <option value="">연도</option>
+                            <option value="2000">2000</option>
+                            <option value="1999">1999</option>
+                            <option value="1998">1998</option>
+                            <option value="1997">1997</option>
+                            <option value="1996">1996</option>
+                            <option value="1995">1995</option>
+                            <option value="1994">1994</option>
+                            <option value="1993">1993</option>
+                            <option value="1992">1992</option>
+                            <option value="1991">1991</option>
+                            <option value="1990">1990</option>
+                        </select>
+                    </div>
+                    <div class="selectBox selectBoxMargin">
+                        <select name="birthMonth" id="birthMonth">
+                            <option value="">월</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="selectBox">
+                        <select name="birthDay" id="birthDay">
+                            <option value="">일</option>
+                            <option value="31">31</option>
+                            <option value="30">30</option>
+                            <option value="29">29</option>
+                            <option value="28">28</option>
+                            <option value="27">27</option>
+                            <option value="26">26</option>
+                            <option value="25">25</option>
+                            <option value="24">24</option>
+                            <option value="23">23</option>
+                            <option value="22">22</option>
+                            <option value="21">21</option>
+                            <option value="20">20</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="row genderRow">
+                    <div id="genderLabel">
+                        <label for="gW" id="gMW">여성</label>
+                        <label for="gM" id="gMM">남성</label>
+                    </div>
+                    <input type="radio" name="gender" class="gender" id="gW" value="w" />
+                    <input type="radio" name="gender" class="gender" id="gM" value="m" />
+                </div>
+                <div class="row">
+                    <p id="valueError"></p>
+                </div>
+                <div class="row">
+                    <div class="submitBox">
+                        <input type="submit" id="signUpSubmit" value="가입하기" />
+                    </div>
+                </div>
+                <input type="hidden" name="mode" value="save" /> <!--type 속성의 값으로 hidden을 적용하면 화면에 표시하지 않으면서 값을 대입할 수 있다-->
+            </form>
+            <div id="goToLoginBtn">
+                <p>로그인하기</p>
+            </div>
+        </div>
+    </section>
+</div>
+<footer>
+    <p>My First Web Service</p>
+</footer>
+    
+</div>
+</body>
+</html>
