@@ -26,7 +26,10 @@ a:link, a:visited, a:hover, a:active {
 }
 
 hr { 
-    display: none; 
+    width: 100%;
+    height: 1px;
+    margin: 20px auto;
+    background-color: #e9e9e9;
 }
 
 button { 

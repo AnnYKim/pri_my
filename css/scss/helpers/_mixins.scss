@@ -21,6 +21,21 @@
 }
 
 
+@mixin btn-normal {
+
+    display: inline-block;
+    padding: 12px 18px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    background-color: $main-color;
+
+    &:hover {
+        background-color: darken($main-color, 10%);
+    }
+}
+
+
 @mixin ellipsis ($lines: 1) {
   @if ($lines == 1) {
       overflow: hidden;

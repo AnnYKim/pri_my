@@ -7,18 +7,19 @@
 
 
 
-//로그인 후 요소 안 보이게 처리
-#viewType, #myName {_display: none;}
-#loginForm {display: none;}
+//요소 안 보이게 처리
+#viewType, #myName, #signup {display: none;}
+#loginForm {_display: none;}
 
 
 
 //모바일, PC공용
 #header {
-    float: left;
-    clear: both;
+    //float: left;
+    //clear: both;
+    overflow: hidden;
     width: 100%;
-    background-color: mediumseagreen;
+    background-color: $main-color;
 }
 
 #loginForm form {
@@ -175,4 +176,37 @@
         font-size: 2rem;
         margin: 10px;
     }
+}
+
+
+
+///////////////////////// 개인 스타일링
+#introSite {
+    text-align: center;
+    
+    #siteComment {
+        width: 25%;
+        margin: 20px auto;
+        padding: 20px;
+        font-size: 1.2rem;
+        color: $main-color;
+        text-align: center;
+        border: 2px solid $main-color;
+    }
+    #signUpBtn {
+        @include btn-normal;
+    }
+}
+
+#signup {
+    #goToLoginBtn {
+        @include btn-normal;
+    }
+}
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+    color: #ccc;
+    font-size: 0.9rem;
 }
